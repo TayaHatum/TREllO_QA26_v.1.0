@@ -13,7 +13,7 @@ public class UserHelper extends HelperBase {
 
     public void initLogin() {
         click(By.cssSelector("[href='/login']"));
-        click(By.cssSelector(""));
+
 
     }
 
@@ -30,7 +30,7 @@ public class UserHelper extends HelperBase {
     }
 
     public boolean isAvatarPresent() throws InterruptedException {
-        pause(20000);
+        pause(2000);
         return isElementPresent(By.cssSelector("[data-test-id='header-member-menu-button']"));
     }
 

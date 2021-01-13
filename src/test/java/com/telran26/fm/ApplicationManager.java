@@ -2,6 +2,8 @@ package com.telran26.fm;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +12,8 @@ public class ApplicationManager {
     WebDriver wd;
     UserHelper user;
     BoardHelper board;
+
+
 
     public BoardHelper getBoard() {
         return board;
@@ -20,8 +24,8 @@ public class ApplicationManager {
     }
 
     public void start() {
+        wd = new ChromeDriver();
 
-        wd=new ChromeDriver();
         wd.navigate().to("https://trello.com/");
         wd.manage().window().maximize();
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

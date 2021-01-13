@@ -21,8 +21,8 @@ public class LogoutTest extends TestBase {
 
 
         app.getUser().clickLogOutButton();
-        app.getUser().pause(3000);
-        Assert.assertFalse(app.getUser().isElementPresent(By.cssSelector("[href='/login']")));
+        app.getUser().pause(6000);
+        Assert.assertTrue(app.getUser().isElementPresent(By.cssSelector("[href='/login']")));
 
 
     }

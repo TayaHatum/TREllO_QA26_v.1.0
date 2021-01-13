@@ -3,6 +3,13 @@ package com.telran26.fm;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+
+
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 
 public class HelperBase {
 
@@ -65,4 +72,16 @@ public class HelperBase {
         click(By.cssSelector("[type='submit']"));
     }
 
+    public void clickHomeButton(By xpath) {
+        clickByxPath("//span[@aria-label='HouseIcon']");
+    }
+
+    public void takeScreenAshot(){
+        Screenshot screen=new AShot().takeScreenshot(wd);
+        try {
+            ImageIO.write(screen.getImage(), "jpg", new File("src/test/screenshots/screenshot.jpg"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
