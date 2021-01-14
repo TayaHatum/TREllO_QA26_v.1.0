@@ -14,6 +14,8 @@ import java.lang.reflect.Method;
 public class TestBase {
 
 //commit1
+//commit2
+
     protected ApplicationManager app = new ApplicationManager();
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
