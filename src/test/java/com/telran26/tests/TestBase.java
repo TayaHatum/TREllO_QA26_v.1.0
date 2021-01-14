@@ -16,7 +16,6 @@ public class TestBase {
 //commit1
 //commit2
 
-
     protected ApplicationManager app = new ApplicationManager();
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
@@ -56,6 +55,4 @@ public class TestBase {
     Revert to commit
     where hash is commit after revert
     git revert <hash> --no-edit
-    git log --all --decorate --oneline --graph
-     */
-
+    * */
