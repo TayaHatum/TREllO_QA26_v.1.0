@@ -1,9 +1,12 @@
 package com.telran26.fm;
 
+import ch.qos.logback.classic.LoggerContext;
+import ch.qos.logback.core.util.StatusPrinter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,8 +15,6 @@ public class ApplicationManager {
     WebDriver wd;
     UserHelper user;
     BoardHelper board;
-
-
 
     public BoardHelper getBoard() {
         return board;
@@ -25,6 +26,11 @@ public class ApplicationManager {
 
     public void start() {
         wd = new ChromeDriver();
+        //Display logback status!
+        // assume SLF4J is bound to logback in the current environment
+        LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+        // print logback's internal status
+        StatusPrinter.print(lc);
 
         wd.navigate().to("https://trello.com/");
         wd.manage().window().maximize();
