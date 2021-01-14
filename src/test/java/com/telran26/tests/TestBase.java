@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 
 public class TestBase {
 
-
+//commit1
     protected ApplicationManager app = new ApplicationManager();
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
@@ -25,12 +25,6 @@ public class TestBase {
     public void endLogger(Method m){
         logger.info("End of test -> "+m.getName());
     }
-
-
-
-
-
-
 
 
   @BeforeClass
