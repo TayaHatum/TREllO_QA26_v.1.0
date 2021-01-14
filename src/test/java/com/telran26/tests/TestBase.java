@@ -14,6 +14,7 @@ import java.lang.reflect.Method;
 public class TestBase {
 
 //test1
+    //test2
 
     protected ApplicationManager app = new ApplicationManager();
     Logger logger = LoggerFactory.getLogger(TestBase.class);
