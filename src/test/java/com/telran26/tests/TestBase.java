@@ -11,6 +11,30 @@ import java.util.Set;
 public class TestBase {
 
 
+    /*
+    Change gitignore
+     git rm -r --cached .
+     git add .
+     git commit -m ".gitignore is now working"
+    * */
+
+    /*
+    Logs
+    git log --all --decorate --oneline --graph
+    * */
+
+    /*
+    Revert back on one commit
+    git revert HEAD --no-edit
+    * */
+
+    /*
+    Revert to commit
+    where hash is commit after revert
+    git revert <hash> --no-edit
+    * */
+
+
     protected ApplicationManager app = new ApplicationManager();
 
 
