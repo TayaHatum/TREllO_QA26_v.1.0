@@ -12,7 +12,7 @@ repositories {
 dependencies {
     implementation 'org.testng:testng:7.1.0'
     implementation 'org.seleniumhq.selenium:selenium-java:3.141.59'
-    implementation 'ru.yandex.qatools.ashot:ashot:1.5.4'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
 
 
 }

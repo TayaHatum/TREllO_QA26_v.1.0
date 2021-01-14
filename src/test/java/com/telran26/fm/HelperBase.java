@@ -1,15 +1,12 @@
 package com.telran26.fm;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import ru.yandex.qatools.ashot.AShot;
-import ru.yandex.qatools.ashot.Screenshot;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 
 
-import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+
 
 public class HelperBase {
 
@@ -76,10 +73,13 @@ public class HelperBase {
         clickByxPath("//span[@aria-label='HouseIcon']");
     }
 
-    public void takeScreenAshot(){
-        Screenshot screen=new AShot().takeScreenshot(wd);
+    public void takeScreenshot(String pathToFile){
+        File tmp = ((TakesScreenshot) wd).getScreenshotAs(OutputType.FILE);
+        File screenshot = new
+                File(pathToFile);
+
         try {
-            ImageIO.write(screen.getImage(), "jpg", new File("src/test/screenshots/screenshot.jpg"));
+            Files.copy(tmp, screenshot);
         } catch (IOException e) {
             e.printStackTrace();
         }

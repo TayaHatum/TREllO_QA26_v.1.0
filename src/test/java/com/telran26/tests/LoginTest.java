@@ -24,7 +24,9 @@ public class LoginTest extends TestBase {
         app.getUser().pause(2000);
 
         Assert.assertTrue(app.getUser().isAvatarPresent());
-        app.getUser().takeScreenAshot();
+        String screenshot = "src/test/screenshots/screenshot-" +(System.currentTimeMillis()/1000%3600)+ ".png";
+        app.getUser().takeScreenshot(screenshot);
+        logger.info("Test passed ");
 
     }
 
