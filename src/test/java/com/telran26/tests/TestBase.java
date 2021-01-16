@@ -23,7 +23,7 @@ public class TestBase {
     }
     @AfterMethod(alwaysRun = true)
     public void endLogger(Method m){
-        logger.info("End of test -> "+m.getName());
+        logger.info("End of test -> "+m.getName() + "\n************************************");
     }
 
 

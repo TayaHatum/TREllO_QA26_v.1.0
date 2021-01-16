@@ -31,8 +31,5 @@ public class LoginTest extends TestBase {
     }
 
 
-    public void testMethod(){
-        System.out.println("Hello");
-    }
 
 }
