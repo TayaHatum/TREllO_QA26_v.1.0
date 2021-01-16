@@ -2,6 +2,7 @@ package com.telran26.tests;
 
 
 import com.telran26.fm.ApplicationManager;
+import org.openqa.selenium.remote.BrowserType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
@@ -13,10 +14,7 @@ import java.lang.reflect.Method;
 
 public class TestBase {
 
-//test1
-    //test2
-
-    protected ApplicationManager app = new ApplicationManager();
+    protected static ApplicationManager app = new ApplicationManager(System.getProperty("browser", BrowserType.CHROME));
     Logger logger = LoggerFactory.getLogger(TestBase.class);
 
     @BeforeMethod
