@@ -2,11 +2,10 @@ package com.telran26.fm;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
 
 public class BoardHelper extends HelperBase {
+
     public BoardHelper(WebDriver wd) {
         super(wd);
     }

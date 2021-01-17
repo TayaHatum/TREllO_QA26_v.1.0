@@ -17,7 +17,8 @@ public class LoginTest extends TestBase {
     }
 
     @Test
-    public void testAtlasianUserLogin() throws InterruptedException {
+    public void testAtlassianUserLogin() throws InterruptedException {
+        logger.info("\n********************************"+"\n Email ->hatum.testing@gmail.com " +"\nPassword -> Hatum21$"+"\n*******************************");
         app.getUser().initLogin();
         app.getUser().fillLogInForm(new User().withEmail("hatum.testing@gmail.com").withPassword("Hatum21$"));
         app.getUser().confirmLogin();

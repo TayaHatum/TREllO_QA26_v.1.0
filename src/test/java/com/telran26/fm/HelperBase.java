@@ -9,12 +9,18 @@ import java.io.IOException;
 
 
 public class HelperBase {
+    WebDriver wd;
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
 
-    WebDriver wd;
+    public HelperBase() {
+    }
+
+    public void setWd(WebDriver wd) {
+        this.wd = wd;
+    }
 
     public void type(By locator, String text) {
         if(text!=null) {
