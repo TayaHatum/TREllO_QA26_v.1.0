@@ -8,7 +8,7 @@ public class BoardTest extends TestBase{
     @BeforeMethod
     public void ensurePrecondition() throws InterruptedException {
         if(!app.getUser().isAvatarPresent()) {
-            app.getUser().login();
+            app.getUser().login(app.setEmail(), app.setPassword());
         }
     }
 

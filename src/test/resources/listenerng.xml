@@ -1,19 +1,17 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
 <suite name="Suite1" verbose="1" >
+    
+    <listeners>
+        <listener class-name="com.telran26.fm.ListenerNG"/>
+    </listeners>
 
     <test name="Reg">
 
-
-<groups>
-    <run>
-        <include name="web"/>
-    </run>
-</groups>
-
         <classes>
+
+            <class name="com.telran26.tests.ListenerNGTest"/>
             <class name="com.telran26.tests.LoginTest"/>
-            <class name="com.telran26.tests.LogoutTest"/>
 
         </classes>
     </test>

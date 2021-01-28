@@ -12,7 +12,7 @@ import java.io.IOException;
 public class MyListener extends AbstractWebDriverEventListener {
     HelperBase helperBase;
 
-//    public ListenerMy(WebDriver driver) {
+//    public MyListener(WebDriver driver) {
 //        super();
 //        this.helperBase = new HelperBase(driver);
 //
@@ -20,7 +20,7 @@ public class MyListener extends AbstractWebDriverEventListener {
 
 
     public MyListener() {
-        helperBase = new HelperBase();
+
     }
 
     Logger logger = LoggerFactory.getLogger(MyListener.class);
@@ -40,8 +40,7 @@ public class MyListener extends AbstractWebDriverEventListener {
     public void onException(Throwable throwable, WebDriver wd) {
         logger.error(throwable.toString());
         String pathToScreenshot = "src/test/screenshots/screen-"+ System.currentTimeMillis()+ ".png";
-//        HelperBase helperBase = new HelperBase(wd);
-        helperBase.setWd(wd);
+        HelperBase helperBase =new HelperBase(wd);
         helperBase.takeScreenshot(pathToScreenshot);
         logger.error(pathToScreenshot);
     }

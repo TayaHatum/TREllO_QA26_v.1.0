@@ -2,6 +2,7 @@ package com.telran26.fm;
 
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 
 import java.io.File;
@@ -15,8 +16,7 @@ public class HelperBase {
         this.wd = wd;
     }
 
-    public HelperBase() {
-    }
+
 
     public void setWd(WebDriver wd) {
         this.wd = wd;
@@ -89,5 +89,16 @@ public class HelperBase {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void attachPhoto(By locator, File file) {
+        if(file!=null) {
+            wd.findElement(locator).sendKeys(file.getAbsolutePath());
+        }
+    }
+
+    public void clickWithActions(By locator){
+        Actions actions = new Actions(wd);
+        actions.moveToElement(wd.findElement(locator)).click();
     }
 }

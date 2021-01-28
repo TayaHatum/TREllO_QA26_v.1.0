@@ -11,7 +11,7 @@ public class LogoutTest extends TestBase {
     @BeforeMethod
     public void ensurePrecondition() throws InterruptedException {
         if(!app.getUser().isAvatarPresent()) {
-            app.getUser().login();
+            app.getUser().login(app.setEmail(), app.setPassword());
 
         }
     }
@@ -22,7 +22,7 @@ public class LogoutTest extends TestBase {
 
         app.getUser().clickLogOutButton();
         app.getUser().pause(6000);
-        Assert.assertTrue(app.getUser().isElementPresent(By.cssSelector("[href='/login']")));
+        Assert.assertFalse(app.getUser().isAvatarPresent());
 
 
     }
