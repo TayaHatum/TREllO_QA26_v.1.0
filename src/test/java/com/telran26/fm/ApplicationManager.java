@@ -1,5 +1,6 @@
 package com.telran26.fm;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
 
     EventFiringWebDriver wd;
+    WebDriver driver;
     UserHelper user;
     BoardHelper board;
     String browser;
@@ -36,7 +38,8 @@ public class ApplicationManager {
 
 
         if(browser.equals(BrowserType.CHROME)){
-            wd = new EventFiringWebDriver(new ChromeDriver());
+            driver = new ChromeDriver();
+            wd = new EventFiringWebDriver(driver);
         }else if (browser.equals(BrowserType.FIREFOX)){
             wd= new EventFiringWebDriver(new FirefoxDriver());
         }else if(browser.equals(BrowserType.EDGE)){
@@ -50,6 +53,7 @@ public class ApplicationManager {
         //StatusPrinter.print(lc);
 
         user = new UserHelper(wd);
+        user.setDriver(driver);
         board = new BoardHelper(wd);
 
         wd.register(new MyListener());
@@ -60,6 +64,8 @@ public class ApplicationManager {
 
 
     }
+
+
     public String setEmail(){
         return properties.getProperty("web.email");
 

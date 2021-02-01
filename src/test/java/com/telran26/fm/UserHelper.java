@@ -66,8 +66,7 @@ public class UserHelper extends HelperBase {
 
     public void goToAtlassianProfile() {
         click(By.cssSelector("[href$=manage-profile]"));
-        List<String> tabs= new ArrayList<>(wd.getWindowHandles());
-        wd.switchTo().window(tabs.get(1));
+        switchToWindowHandel(1);
     }
 
     public void changeAvatar(String path) throws InterruptedException {
@@ -81,8 +80,21 @@ public class UserHelper extends HelperBase {
         pause(100);
         el.findElement(By.xpath("//span[text()='Change profile photo']")).click();
         attachPhoto(By.id("image-input"),new File(path));
+        pause(1000);
         click(By.xpath("//span[text()='Upload']"));
 
 
+    }
+    public void closeWindow(){
+        wd.close();
+        switchToWindowHandel(0);
+    }
+
+
+    public boolean isAvatarAdded() {
+
+        WebDriverWait wait = new WebDriverWait(wd,10);
+       return wait.until(ExpectedConditions.
+               textToBePresentInElement(wd.findElement(By.xpath("//span[text()='Avatar added']")),"Avatar added"));
     }
 }

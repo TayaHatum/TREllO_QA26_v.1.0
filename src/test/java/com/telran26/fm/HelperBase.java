@@ -7,16 +7,21 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class HelperBase {
     WebDriver wd;
+    WebDriver driver;
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
 
-
+    public void setDriver(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public void setWd(WebDriver wd) {
         this.wd = wd;
@@ -69,7 +74,8 @@ public class HelperBase {
         Thread.sleep(millis);
     }
     public boolean isElementPresent(By locator) {
-        return wd.findElements(locator).size()>0;
+        List<WebElement> elements = wd.findElements(locator);
+        return elements.size()>0;
     }
     public void clickYallaButton() {
         click(By.cssSelector("[type='submit']"));
@@ -100,5 +106,9 @@ public class HelperBase {
     public void clickWithActions(By locator){
         Actions actions = new Actions(wd);
         actions.moveToElement(wd.findElement(locator)).click();
+    }
+    public void switchToWindowHandel(int index) {
+        List<String> tabs= new ArrayList<>(wd.getWindowHandles());
+        wd.switchTo().window(tabs.get(index));
     }
 }
