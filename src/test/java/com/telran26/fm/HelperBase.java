@@ -3,8 +3,6 @@ package com.telran26.fm;
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -13,15 +11,12 @@ import java.util.List;
 
 public class HelperBase {
     WebDriver wd;
-    WebDriver driver;
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
 
-    public void setDriver(WebDriver driver) {
-        this.driver = driver;
-    }
+
 
     public void setWd(WebDriver wd) {
         this.wd = wd;
@@ -70,6 +65,7 @@ public class HelperBase {
     public void clickByxPath(String xPathSelector) {
         wd.findElement(By.xpath(xPathSelector)).click();
     }
+
     public void pause(int millis) throws InterruptedException {
         Thread.sleep(millis);
     }
@@ -107,8 +103,10 @@ public class HelperBase {
         Actions actions = new Actions(wd);
         actions.moveToElement(wd.findElement(locator)).click();
     }
+
     public void switchToWindowHandel(int index) {
         List<String> tabs= new ArrayList<>(wd.getWindowHandles());
         wd.switchTo().window(tabs.get(index));
     }
+
 }

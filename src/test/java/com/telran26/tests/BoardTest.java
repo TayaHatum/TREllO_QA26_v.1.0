@@ -1,5 +1,6 @@
 package com.telran26.tests;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -34,5 +35,10 @@ public class BoardTest extends TestBase{
 @Test
 public void clearBoard() throws InterruptedException {
     app.getBoard().cleanAllBoard();
+}
+
+@AfterMethod
+    public void postCondition(){
+        app.getUser().clickLogOutButton();
 }
 }

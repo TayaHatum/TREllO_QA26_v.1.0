@@ -17,7 +17,6 @@ import java.util.concurrent.TimeUnit;
 public class ApplicationManager {
 
     EventFiringWebDriver wd;
-    WebDriver driver;
     UserHelper user;
     BoardHelper board;
     String browser;
@@ -38,8 +37,7 @@ public class ApplicationManager {
 
 
         if(browser.equals(BrowserType.CHROME)){
-            driver = new ChromeDriver();
-            wd = new EventFiringWebDriver(driver);
+            wd = new EventFiringWebDriver(new ChromeDriver());
         }else if (browser.equals(BrowserType.FIREFOX)){
             wd= new EventFiringWebDriver(new FirefoxDriver());
         }else if(browser.equals(BrowserType.EDGE)){
@@ -53,18 +51,22 @@ public class ApplicationManager {
         //StatusPrinter.print(lc);
 
         user = new UserHelper(wd);
-        user.setDriver(driver);
         board = new BoardHelper(wd);
 
         wd.register(new MyListener());
 
         wd.navigate().to(properties.getProperty("web.baseURL"));
+        wd.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
+        wd.manage().timeouts().setScriptTimeout(10,TimeUnit.SECONDS);
         wd.manage().window().maximize();
-        wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
 
     }
 
+    public WebDriver getWd() {
+        return wd;
+    }
 
     public String setEmail(){
         return properties.getProperty("web.email");

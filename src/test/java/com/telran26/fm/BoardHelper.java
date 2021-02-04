@@ -2,6 +2,10 @@ package com.telran26.fm;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.List;
 
 
 public class BoardHelper extends HelperBase {
@@ -47,23 +51,40 @@ public class BoardHelper extends HelperBase {
 
        while(wd.findElements(By.xpath("//ul[@class='boards-page-board-section-list']/li/a")).size() > 0){
 
-//       for (int i=0;i<el.size()-1;i++){
+
            wd.findElements(By.xpath("//ul[@class='boards-page-board-section-list']/li/a")).get(0).click();
-          pause(4000);
+          //pause(4000);
           click(By.xpath("//a[@title='Go back.']"));
           click(By.xpath("//li[contains(.,'More')]"));
           clickByxPath("//li[contains(.,'Close Board…')]");
           clickByxPath("//input[@type='submit' and @value='Close']");
-          pause(4000);
+          //pause(4000);
           clickByxPath("//a[.='Permanently Delete Board…']");
           click(By.xpath("//input[@value='Delete']"));
-          pause(4000);
+          //pause(4000);
           clickHomeButton(By.xpath("//span[@aria-label='HouseIcon']"));
-          pause(4000);
+          //pause(4000);
 
        }
 
     }
 
+public void clearall(){
+        List<WebElement> boards= wd.findElements(By.xpath(""));
+    System.out.println(boards.size());
 
+    for(int i=0; i<boards.size();i++){
+        WebElement el =boards.get(0);
+        el.click();
+        click(By.xpath("//a[@title='Go back.']"));
+        click(By.xpath("//li[contains(.,'More')]"));
+        clickByxPath("//li[contains(.,'Close Board…')]");
+        clickByxPath("//input[@type='submit' and @value='Close']");
+        //pause(4000);
+        clickByxPath("//a[.='Permanently Delete Board…']");
+        click(By.xpath("//input[@value='Delete']"));
+        //pause(4000);
+        clickHomeButton(By.xpath("//span[@aria-label='HouseIcon']"));
+    }
+}
 }

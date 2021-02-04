@@ -9,8 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserHelper extends HelperBase {
 
@@ -28,17 +26,18 @@ public class UserHelper extends HelperBase {
     public void fillLogInForm(User user) throws InterruptedException {
         type(By.id("user"), user.getEmail());
         click(By.id("login"));
-        pause(2000);
+        //pause(1000);
+        WebDriverWait wait =new WebDriverWait(wd,15);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("form-login")));
         type(By.id("password"), user.getPassword());
-
-
     }
+
     public void confirmLogin() {
         click(By.id("login-submit"));
     }
 
-    public boolean isAvatarPresent() throws InterruptedException {
-        pause(2000);
+    public boolean isAvatarPresent() {
+
         return isElementPresent(By.cssSelector("[data-test-id='header-member-menu-button']"));
     }
 
@@ -51,6 +50,8 @@ public class UserHelper extends HelperBase {
     public void clickLogOutButton() {
         click(By.cssSelector("._1FekJJAz6Hu32v"));
         click(By.xpath("//span[contains(.,'Log Out')]"));
+        clickByxPath("//button[@id='logout-submit']");
+
 
 
     }
@@ -69,18 +70,18 @@ public class UserHelper extends HelperBase {
         switchToWindowHandel(1);
     }
 
-    public void changeAvatar(String path) throws InterruptedException {
-        pause(100);
+    public void changeAvatar(String path)  {
+
 
         Actions actions= new Actions(wd);
         actions.moveToElement(wd.findElement(By.xpath("//div[@data-test-selector='profile-avatar']"))).perform();
-        pause(100);
+
         WebElement el=wd.findElement(By.xpath("//button[@aria-controls='uid17']"));
        el.click();
-        pause(100);
+
         el.findElement(By.xpath("//span[text()='Change profile photo']")).click();
         attachPhoto(By.id("image-input"),new File(path));
-        pause(1000);
+
         click(By.xpath("//span[text()='Upload']"));
 
 

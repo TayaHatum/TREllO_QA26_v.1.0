@@ -14,6 +14,9 @@
         <classes>
             <class name="com.telran26.tests.LoginTest"/>
             <class name="com.telran26.tests.LogoutTest"/>
+            <class name="com.telran26.tests.ChangeAvatar"/>
+            <class name="com.telran26.tests.BoardTest"/>
+
 
         </classes>
     </test>
