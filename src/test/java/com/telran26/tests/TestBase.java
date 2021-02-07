@@ -39,8 +39,6 @@ public class TestBase {
     @AfterClass
     public void tearDown(){
         app.stop();
-
-
     }
 
 }
