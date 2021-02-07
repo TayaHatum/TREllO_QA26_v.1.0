@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.telran26.tests.ChangeAvatar" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-02-07T20:09:22" hostname="MBP-Taya.lan" time="16.37">
+  <properties/>
+  <testcase name="testChangeAvatar" classname="com.telran26.tests.ChangeAvatar" time="16.37"/>
+  <system-out><![CDATA[22:08:57 INFO  - Start test - >testChangeAvatar
+22:08:57 INFO  - Start search ->By.cssSelector: [data-test-id='header-member-menu-button']
+22:09:17 INFO  - By.cssSelector: [data-test-id='header-member-menu-button']<- found
+22:09:17 INFO  - Start search ->By.cssSelector: [href='/login']
+22:09:17 INFO  - By.cssSelector: [href='/login']<- found
+22:09:19 INFO  - Start search ->By.id: user
+22:09:19 INFO  - By.id: user<- found
+22:09:19 INFO  - Start search ->By.id: user
+22:09:19 INFO  - By.id: user<- found
+22:09:19 INFO  - Start search ->By.id: user
+22:09:19 INFO  - By.id: user<- found
+22:09:19 INFO  - Start search ->By.id: login
+22:09:19 INFO  - By.id: login<- found
+22:09:19 INFO  - Start search ->By.id: form-login
+22:09:22 INFO  - By.id: form-login<- found
+22:09:22 INFO  - Start search ->By.id: password
+22:09:22 INFO  - By.id: password<- found
+22:09:22 INFO  - Start search ->By.id: password
+22:09:22 INFO  - By.id: password<- found
+22:09:22 INFO  - Start search ->By.id: password
+22:09:22 INFO  - By.id: password<- found
+22:09:22 INFO  - Start search ->By.id: login-submit
+22:09:22 INFO  - By.id: login-submit<- found
+22:09:22 INFO  - ListenerNg starttestChangeAvatar
+22:09:22 INFO  - Start search ->By.cssSelector: ._1FekJJAz6Hu32v
+22:09:32 INFO  - By.cssSelector: ._1FekJJAz6Hu32v<- found
+22:09:32 INFO  - Start search ->By.xpath: //span[.='Profile and Visibility']
+22:09:32 INFO  - By.xpath: //span[.='Profile and Visibility']<- found
+22:09:32 INFO  - Start search ->By.cssSelector: [href$=manage-profile]
+22:09:33 INFO  - By.cssSelector: [href$=manage-profile]<- found
+22:09:33 INFO  - Start search ->By.xpath: //div[@data-test-selector='profile-avatar']
+22:09:36 INFO  - By.xpath: //div[@data-test-selector='profile-avatar']<- found
+22:09:36 INFO  - Start search ->By.xpath: //button[@aria-controls='uid17']
+22:09:36 INFO  - By.xpath: //button[@aria-controls='uid17']<- found
+22:09:37 INFO  - Start search ->By.xpath: //span[text()='Change profile photo']
+22:09:37 INFO  - By.xpath: //span[text()='Change profile photo']<- found
+22:09:37 INFO  - Start search ->By.id: image-input
+22:09:37 INFO  - By.id: image-input<- found
+22:09:37 INFO  - Start search ->By.xpath: //span[text()='Upload']
+22:09:37 INFO  - By.xpath: //span[text()='Upload']<- found
+22:09:37 INFO  - Start search ->By.xpath: //span[text()='Avatar added']
+22:09:38 INFO  - By.xpath: //span[text()='Avatar added']<- found
+22:09:38 INFO  - End of test -> testChangeAvatar
+************************************
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 87.0.4280.88 (89e2380a3e36c3464b5dd1302349b1382549290d-refs/branch-heads/4280@{#1761}) on port 41311
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1612728533.768][WARNING]: This version of ChromeDriver has not been tested with Chrome version 88.
+Feb 07, 2021 10:08:53 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

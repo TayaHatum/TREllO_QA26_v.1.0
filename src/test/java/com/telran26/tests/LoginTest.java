@@ -19,13 +19,11 @@ public class LoginTest extends TestBase {
 
 
     @Test(dataProvider = "validLogin", dataProviderClass = DataProviders.class)
-    public void testDataProviderLogin(String email, String password) throws InterruptedException {
+    public void testDataProviderLogin(String email, String password) {
         logger.info("\n********************************"+"\n Email ->"+email +"\nPassword -> "+password+"\n*******************************");
         app.getUser().initLogin();
         app.getUser().fillLogInForm(new User().withEmail(email).withPassword(password));
         app.getUser().confirmLogin();
-        app.getUser().pause(2000);
-
         Assert.assertTrue(app.getUser().isAvatarPresent());
         String screenshot = "src/test/screenshots/screenshot-" +(System.currentTimeMillis()/1000%3600)+ ".png";
         app.getUser().takeScreenshot(screenshot);
@@ -34,14 +32,12 @@ public class LoginTest extends TestBase {
     }
 
     @Test(dataProvider = "validLoinFromFile", dataProviderClass = DataProviders.class)
-    public void testDataProviderCSVLogin(User user) throws InterruptedException {
+    public void testDataProviderCSVLogin(User user)  {
 
         logger.info("\n********************************"+"\n Email ->"+user.getEmail() +"\nPassword -> "+user.getPassword()+"\n*******************************");
         app.getUser().initLogin();
         app.getUser().fillLogInForm(user);
         app.getUser().confirmLogin();
-       app.getUser().pause(2000);
-
         Assert.assertTrue(app.getUser().isAvatarPresent());
         String screenshot = "src/test/screenshots/screenshot-" +(System.currentTimeMillis()/1000%3600)+ ".png";
         app.getUser().takeScreenshot(screenshot);
@@ -51,13 +47,11 @@ public class LoginTest extends TestBase {
 
 
     @Test
-    public void testAtlassianUserLogin() throws InterruptedException {
+    public void testAtlassianUserLogin()  {
         logger.info("\n********************************"+"\n Email ->hatum.testing@gmail.com " +"\nPassword -> Hatum21$"+"\n*******************************");
         app.getUser().initLogin();
         app.getUser().fillLogInForm(new User().withEmail(app.setEmail()).withPassword(app.setPassword()));
         app.getUser().confirmLogin();
-
-
         Assert.assertTrue(app.getUser().isAvatarPresent());
         String screenshot = "src/test/screenshots/screenshot-" +(System.currentTimeMillis()/1000%3600)+ ".png";
         app.getUser().takeScreenshot(screenshot);

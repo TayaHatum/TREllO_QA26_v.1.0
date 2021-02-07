@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 @Listeners(ListenerNG.class)
 public class ListenerNGTest {
 
-    @Test
+    @Test(enabled = false)
    public void testOpenWIKI() {
 
         WebDriver wd = new ChromeDriver();

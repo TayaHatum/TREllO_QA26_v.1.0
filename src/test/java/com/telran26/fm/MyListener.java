@@ -10,14 +10,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class MyListener extends AbstractWebDriverEventListener {
-    HelperBase helperBase;
-
-//    public MyListener(WebDriver driver) {
-//        super();
-//        this.helperBase = new HelperBase(driver);
-//
-//    }
-
 
     public MyListener() {
 

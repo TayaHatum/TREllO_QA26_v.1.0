@@ -18,7 +18,7 @@ public class ChangeAvatar extends TestBase{
     }
 
     @Test
-    public void testChangeAvatar() throws InterruptedException {
+    public void testChangeAvatar() {
         app.getUser().clickOnAvatar();
         app.getUser().goToProfile();
         app.getUser().goToAtlassianProfile();

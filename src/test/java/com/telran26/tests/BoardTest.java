@@ -14,26 +14,24 @@ public class BoardTest extends TestBase{
     }
 
     @Test
-    public void createBoard() throws InterruptedException {
+    public void createBoard()  {
         if(app.getBoard().getCountBoard()>3){
             app.getBoard().cleanAllBoard();
         }
 
 
-        app.getBoard().pause(2000);
+
         app.getBoard().ckickCreateBoard();
         app.getBoard().fillTitleNewBoard("boarNew");
         app.getBoard().clickByBordTypeSelector();
-
         app.getBoard().clickOnPublicType();
         app.getBoard().clickOnAcceptButton();
-        app.getBoard().pause(2000);
         app.getBoard().clickOnCreateBoardButton();
 
     }
 
 @Test
-public void clearBoard() throws InterruptedException {
+public void clearBoard()  {
     app.getBoard().cleanAllBoard();
 }
 
