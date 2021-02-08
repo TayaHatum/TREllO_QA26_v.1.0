@@ -10,7 +10,6 @@
 
         <classes>
 
-            <class name="com.telran26.tests.ListenerNGTest"/>
             <class name="com.telran26.tests.LoginTest"/>
 
         </classes>
