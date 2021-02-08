@@ -24,7 +24,7 @@ test {
 task reg(type: Test){
 
     useTestNG{
-        suites 'src/test/resources/listenerng.xml'
+        suites 'src/test/resources/testng.xml'
     }
 
     if(project.hasProperty('browser')){
