@@ -11,7 +11,7 @@ public class LoginTest extends TestBase {
 
 
     @AfterMethod
-    public void ensurePrecondition() {
+    public void ensurePrecondition() throws InterruptedException {
         if(app.getUser().isAvatarPresent()) {
             app.getUser().clickLogOutButton();
         }

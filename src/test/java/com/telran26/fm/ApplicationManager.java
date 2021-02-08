@@ -20,10 +20,8 @@ public class ApplicationManager {
     UserHelper user;
     BoardHelper board;
     String browser;
-
-
-
     Properties properties;
+
     public ApplicationManager(String browser) {
         this.browser = browser;
         properties=new Properties();

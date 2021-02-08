@@ -46,11 +46,12 @@ public class UserHelper extends HelperBase {
         confirmLogin();
     }
 
-    public void clickLogOutButton() {
+    public void clickLogOutButton() throws InterruptedException {
         click(By.cssSelector("._1FekJJAz6Hu32v"));
+        pause(1000);
         click(By.xpath("//span[contains(.,'Log Out')]"));
+        pause(1000);
         clickByxPath("//button[@id='logout-submit']");
-
 
 
     }

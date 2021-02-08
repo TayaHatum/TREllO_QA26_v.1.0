@@ -1,30 +1,30 @@
-com/telran26/fm/HelperBase.java
- com.telran26.fm.HelperBase
-com/telran26/fm/ListenerNG.java
- com.telran26.fm.ListenerNG
-com/telran26/model/Board.java
- com.telran26.model.Board
-com/telran26/model/User.java
- com.telran26.model.User
 com/telran26/fm/UserHelper.java
  com.telran26.fm.UserHelper
-com/telran26/fm/DataProviders.java
- com.telran26.fm.DataProviders
-com/telran26/tests/ChangeAvatar.java
- com.telran26.tests.ChangeAvatar
 com/telran26/tests/BoardTest.java
  com.telran26.tests.BoardTest
-com/telran26/fm/ApplicationManager.java
- com.telran26.fm.ApplicationManager
 com/telran26/tests/ListenerNGTest.java
  com.telran26.tests.ListenerNGTest
 com/telran26/tests/TestBase.java
  com.telran26.tests.TestBase
 com/telran26/fm/BoardHelper.java
  com.telran26.fm.BoardHelper
-com/telran26/tests/LoginTest.java
- com.telran26.tests.LoginTest
 com/telran26/fm/MyListener.java
  com.telran26.fm.MyListener
+com/telran26/model/Board.java
+ com.telran26.model.Board
+com/telran26/fm/DataProviders.java
+ com.telran26.fm.DataProviders
+com/telran26/fm/HelperBase.java
+ com.telran26.fm.HelperBase
+com/telran26/tests/ChangeAvatar.java
+ com.telran26.tests.ChangeAvatar
+com/telran26/fm/ApplicationManager.java
+ com.telran26.fm.ApplicationManager
+com/telran26/model/User.java
+ com.telran26.model.User
+com/telran26/fm/ListenerNG.java
+ com.telran26.fm.ListenerNG
+com/telran26/tests/LoginTest.java
+ com.telran26.tests.LoginTest
 com/telran26/tests/LogoutTest.java
  com.telran26.tests.LogoutTest
