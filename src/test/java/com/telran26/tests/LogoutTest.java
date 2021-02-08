@@ -16,7 +16,7 @@ public class LogoutTest extends TestBase {
     }
 
     @Test
-    public void logOutTest()  {
+    public void logOutTest() throws InterruptedException {
 
 
         app.getUser().clickLogOutButton();
