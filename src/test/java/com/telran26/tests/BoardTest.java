@@ -36,7 +36,7 @@ public void clearBoard()  {
 }
 
 @AfterMethod
-    public void postCondition(){
+    public void postCondition() throws InterruptedException {
         app.getUser().clickLogOutButton();
 }
 }
