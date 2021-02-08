@@ -46,7 +46,7 @@ public class LoginTest extends TestBase {
     }
 
 
-    @Test
+    @Test(enabled = false)
     public void testAtlassianUserLogin()  {
         logger.info("\n********************************"+"\n Email ->hatum.testing@gmail.com " +"\nPassword -> Hatum21$"+"\n*******************************");
         app.getUser().initLogin();
